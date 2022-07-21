@@ -80,7 +80,7 @@ const myName = "Ariyo";
 const job = "programmer";
 const birthYear = 1996;
 
-console.log("I am " + myName + " a " + job + " by profession" + " born");
+console.log("I am " + myName + " a " + job + " by profession" + " born"o);
 
 
 
