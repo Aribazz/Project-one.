@@ -454,16 +454,301 @@ const jonas = {
 };
 
 console.log(jonas.calcAge());
-*/
 
+//const calcAge = function (birthYear) { }
+//function calAge(birthYear) { }
+//COMBINATION OF OBJECT WITH VARIOUS OTHER PROPERTIES:
 const jonas = {
-    firstName: "aroma",
+    birthYear: 1992,
+    firstName: "Ari",
     lastName: "John",
-    hasDrivenLicense: true,
-    days: ["mondays", "wednesday", "fridays"],
-
+    hasDrivenLicence: false,
+    calcAge: function () {
+        console.log(this);
+        return 2037 - this.birthYear;
+    },
     getSummary: function () {
-        return `${this.firstName} is the first name the last name is ${jonas.lastName}..e.t.c, is he have driven license${this.days}`
+        return `${jonas.firstName} is a ${jonas.calcAge()} is year old ${this.lastName}, and has a ${jonas.hasDrivenLicence ? 'yes' : 'no'} driver's licence. `
+
+    }
+}
+
+console.log(jonas.calcAge());
+console.log(jonas.getSummary());
+
+//EXERCISE TO DO ON CHALLENGES
+const markMille = {
+    markMass: 78,
+    markHeight: 1.69,
+    calcBMI1: function () {
+        return BMIMark = this.markMass / this.markHeight ** 2;
     }
 };
-console.log(jonas.getSummary());
+const johnSmith = {
+    johnMass: 92,
+    johnHeight: 1.95,
+    calcBMI2: function () {
+        this.BMIJohn = this.johnMass / this.johnHeight ** 2;
+        return this.BMIJohn;
+    }
+}
+console.log(johnSmith.calcBMI2());
+console.log(markMille.calcBMI1());
+
+
+//For loop keeps runnings while the condition is TRUE
+for (let rep = 1; rep <= 10; rep = rep + 1) {
+    console.log("lifted wights repitions 1");
+}
+
+// INTRODUCING THE FOR LOOP
+const jonas = [
+    'john',
+    'steven',
+    2037 - 1996,
+    'teacher',
+    ['monday', 'tuesday', 'wednesday']
+];
+const types = [];
+for (let i = 0; i < 5; i = i + 1) {
+    //Reading from jonas array
+    console.log(jonas[i], typeof jonas[i]);
+    //filling types array
+    types[i] = jonas[i];
+
+}
+console.log(types);
+
+//ANOTHER EXAMPLE OF ARRAY IN COMBINING DIFFERENT VARIBALE IN IT..
+const years = [1991, 2007, 1969, 2020];
+const age = [];
+for (let i = 0; i < years.length; i++) {
+    // age[i] = 2037 - years[i];
+    age.push(2037 - years[i]);
+}
+console.log(age);
+
+//continue and break statement
+const year = [
+    'john',
+    'steven',
+    2037 - 1996,
+    'teacher',
+    ['monday', 'tuesday', 'wednesday']
+];
+for (let i = 0; i < year.length; i++) {
+    if (typeof year[i] !== 'string') break;
+    console.log(year[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`-----starting exercise ${exercise}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`lifting weight repetition ${rep}`);
+    }
+}
+
+for (let job = 1; job < 4; job++) {
+    console.log(`---this is my job${job}`)
+}
+let exercise = 1;
+while (exercise < 10) {
+    console.log(`-----starting exercise ${exercise}`);
+    exercise++;
+}
+//while loop: Example of checking rolling dice..
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`you rolled a ${dice}`)
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('loop is about to end...');
+}
+
+//Coding challenges #4
+const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+const calcTips = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+}
+for (let i = 0; i < bill.length; i++) {
+    const tip = calcTips(bill[i]);
+    tips[i] = tip
+    console.log(tips);
+    tips.push(tip);
+    totals.push(tip + bill[i]);
+
+}
+console.log(bill, tips, totals);
+const calcAverage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    console.log(sum);
+
+}
+calcAverage([6, 7, 8]);
+
+
+//declaring a variable
+const markHeight = 1.88;
+const markMass = 95;
+const johnHeight = 1.88;
+const johnMass = 95;
+const markBMI = markMass / (markHeight * markHeight);
+const johnBMI = johnHeight / (johnHeight * johnHeight);
+console.log(markBMI, johnBMI);
+const higherBMI = markBMI > johnBMI;
+if (markBMI > johnBMI) {
+    console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})`);
+} else if (johnBMI > markBMI) {
+    console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})`);
+} else {
+    console.log(`we have a tie`);
+}
+
+
+//PRATICE REVISION
+function fruitProcessor(apple, orange) {
+    console.log(apple, orange);
+    const juice = `i have ${apple} with just ${orange} in the basket...`;
+    return juice;
+
+}
+console.log(fruitProcessor(10, 5));
+const appleFriutProcessor = fruitProcessor(2, 6);
+console.log(appleFriutProcessor);
+
+function calcAge(birthYear) {
+    const age = 2037 - birthYear;
+    return age;
+}
+calcAge(1991);
+console.log(calcAge(1991));
+const reAge = calcAge(1994);
+console.log(reAge);
+
+const calAge = function (birthYear) {
+    const age = 2037 - birthYear;
+    return age;
+}
+
+const age1 = calAge(1997);
+console.log(age1);
+
+const yearUnitRetirement = (birthYear, firstName) => {
+    console.log
+    const age = 2037 - birthYear;
+    const retirement = 64 - age;
+    return `i am ${birthYear} years old and my name is ${firstName}which the retirement is ${retirement}.`;
+}
+console.log(yearUnitRetirement(2012, "Ariyo"));
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+function fruitProcessor(apple, orange) {
+    const appleFriut = cutFruitPieces(apple);
+    const orangeFruit = cutFruitPieces(orange);
+    const juice = `Juice with ${appleFriut} and ${orangeFruit}`;
+    return juice;
+}
+fruitProcessor(4, 6);
+console.log(fruitProcessor(4, 6));
+
+const friend = ['monday', 'tuesday', 'wednesday', ['thursday']];
+console.log(friend);
+friend[0] = 'Number one';
+console.log(friend);
+
+
+
+const jonas = {
+  firstName: "Ariyo",
+  lastName: "Johnson",
+  age: 2037 - 1991,
+  job: "teacher",
+  birthYear: 1996,
+  mature: 2012,
+  calcAge: function (mature) {
+    return 2037 - this.mature;
+  },
+};
+const interestedIn = prompt("What is your age?");
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log("Wrong Request");
+}
+jonas.locationn = "portaguel";
+jonas["@twitter"] = "Aribazz";
+console.log(jonas.calcAge()); // for the Dot
+console.log(jonas["calcAge"]());
+
+"use strict";
+
+const measureKelvin = function () {
+  const measurement = {
+    type: "tempt",
+    unit: "celsius",
+    value: Number(prompt("Degree Celsius")),
+  };
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+console.log(measureKelvin());
+
+
+
+
+
+const jonas = {
+  firstName: "Ariyo",
+  lastName: "Johnson",
+  age: 2037 - 1991,
+  job: "teacher",
+  birthYear: 1996,
+  mature: 2012,
+  calcAge: function (birthYear) {
+    return 2037 - this.birthYear;
+  },
+};
+const interestedIn = prompt("What is your age?");
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log("Wrong Request");
+}
+jonas.locationn = "portaguel";
+jonas["@twitter"] = "Aribazz";
+console.log(jonas.calcAge()); // for the Dot
+console.log(jonas["calcAge"]());
+
+
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+console.log(`${data1[0]}... ${data1[1]}... ${data1[2]}...`);
+
+const printForcast = function (arr) {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str = str + `${arr[i]} in ${i + 1}days...`;
+  }
+  console.log("..." + str);
+};
+printForcast(data2);
+*/
+
+for (let exercise = 0; exercise < 6; exercise++) {
+  console.log(`THE VARIETIES OF EVENT: ${exercise}`);
+  for (let rep = 0; rep < 10; rep++) {
+    console.log(
+      `This will contain all the various above Exercise of the event..${rep}`
+    );
+    if (exercise === 2) {
+      console.log(`This loops End here...`);
+    }
+  }
+}
